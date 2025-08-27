@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Me - Jay-Em Portfolio</title>
+  <link rel="stylesheet" href="webpage.css">
+  <link rel="stylesheet" href="contactme.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+  <style>
+    /* Ensure form inputs have visible text */
+    input, textarea {
+      color: #000000 !important;
+      background-color: #ffffff !important;
+    }
+    
+    input::placeholder, textarea::placeholder {
+      color: #6b7280 !important;
+    }
+    
+    /* Focus states */
+    input:focus, textarea:focus {
+      color: #000000 !important;
+      background-color: #ffffff !important;
+    }
+  </style>
+</head>
+  <body class="bg-gradient-to-br from-slate-50 to-slate-100 min-h-screen">
+        <!-- Header -->
+    <header class="flex items-center justify-between px-12 py-5 shadow-sm">
+      <a href="webpage.html" class="logo text-2xl font-bold text-white hover:text-orange-200 transition-colors">PORTFOLIO</a>
+      <nav>
+        <ul class="flex gap-5 list-none">
+         
+          <li><a href="contactme.html" class="text-white font-semibold">Contact me</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Background Video -->
+    <video autoplay muted loop id="bg-video" class="fixed top-0 left-0 w-full h-full object-cover -z-10">
+      <source src="bg.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+
+  <!-- Main Content -->
+  <main class="max-w-6xl mx-auto px-6 py-16">
+    <!-- Page Title -->
+    <div class="text-center mb-16">
+      <h1 class="text-5xl font-bold text-white mb-4 drop-shadow-lg">Get In Touch</h1>
+      <p class="text-xl text-white/90 max-w-2xl mx-auto drop-shadow-md">
+        I'm always interested in new opportunities and exciting projects. 
+        Feel free to reach out if you'd like to work together or just want to say hello!
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+      <!-- Contact Form -->
+      <div class="bg-white rounded-2xl shadow-xl p-8 contact-form">
+        <h2 class="text-2xl font-bold text-slate-800 mb-6">Send Me a Message</h2>
+        <form id="contact-form" onsubmit="sendEmail(event)">
+          <div class="mb-6">
+            <label for="name" class="block text-sm font-medium text-slate-700 mb-2">Full Name</label>
+            <input 
+              type="text" 
+              id="name" 
+              name="name" 
+              required
+              class="w-full px-4 py-3 border border-slate-300 rounded-lg focus:border-orange-500 focus:ring-2 focus:ring-orange-200 outline-none"
+              placeholder="Enter your full name"
+            >
+          </div>
+          
+          <div class="mb-6">
+            <label for="email" class="block text-sm font-medium text-slate-700 mb-2">Email Address</label>
+            <input 
+              type="email" 
+              id="email" 
+              name="email" 
+              required
+              class="w-full px-4 py-3 border border-slate-300 rounded-lg focus:border-orange-500 focus:ring-2 focus:ring-orange-200 outline-none"
+              placeholder="Enter your email address"
+            >
+          </div>
+          
+          <div class="mb-6">
+            <label for="subject" class="block text-sm font-medium text-slate-700 mb-2">Subject</label>
+            <input 
+              type="text" 
+              id="subject" 
+              name="subject" 
+              required
+              class="w-full px-4 py-3 border border-slate-300 rounded-lg focus:border-orange-500 focus:ring-2 focus:ring-orange-200 outline-none"
+              placeholder="What's this about?"
+            >
+          </div>
+          
+          <div class="mb-8">
+            <label for="message" class="block text-sm font-medium text-slate-700 mb-2">Message</label>
+            <textarea 
+              id="message" 
+              name="message" 
+              rows="5"
+              required
+              class="w-full px-4 py-3 border border-slate-300 rounded-lg focus:border-orange-500 focus:ring-2 focus:ring-orange-200 outline-none resize-none"
+              placeholder="Tell me about your project or inquiry..."
+            ></textarea>
+          </div>
+          
+                     <button 
+             type="submit" 
+             id="submit-btn"
+             class="w-full bg-orange-500 text-white font-semibold py-4 px-6 rounded-lg submit-btn hover:bg-orange-600"
+           >
+             <span id="btn-text">Send Message</span>
+             <span id="btn-loading" class="hidden">Sending...</span>
+           </button>
+        </form>
+      </div>
+
+      <!-- Contact Information -->
+      <div class="space-y-8">
+        <div class="bg-white rounded-2xl shadow-xl p-8">
+          <h2 class="text-2xl font-bold text-slate-800 mb-6">Contact Information</h2>
+          
+            <div class="flex items-center space-x-4">
+             
+              </div>
+              <div>
+                <div class="flex items-center space-x-4">
+                  <img src="mail.png " alt="Phone" class="w-8 h-8">
+                  <div>
+                <h3 class="font-semibold text-slate-800">Email</h3>
+                <a href="mailto:you@example.com" class="text-orange-500 hover:text-orange-600 transition-colors">you@example.com</a>
+              </div>
+            </div>
+            
+            <div class="flex items-center space-x-4">
+              <img src="telephone.png" alt="Phone" class="w-8 h-8">
+              <div>
+                <h3 class="font-semibold text-slate-800">Phone</h3>
+                <a href="tel:+639000000000" class="text-orange-500 hover:text-orange-600 transition-colors">+63 900 000 0000</a>
+              </div>
+            </div>
+            
+            <div class="flex items-center space-x-4">
+              <img src="placeholder.png" alt="Location" class="w-8 h-8">
+              <div>
+                <h3 class="font-semibold text-slate-800">Location</h3>
+                <p class="text-slate-600">Philippines</p>
+              </div>
+            </div>
+            
+            <div class="flex items-center space-x-4">
+              <img src="convenience.png" alt="Available for" class="w-8 h-8">
+              <div>
+                <h3 class="font-semibold text-slate-800">Available for</h3>
+                <p class="text-slate-600">Freelance projects, Full-time positions, Collaborations</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Quick Response -->
+        <div class="bg-gradient-to-r from-orange-500 to-orange-600 rounded-2xl shadow-xl p-8 text-white">
+          <h3 class="text-xl font-bold mb-3">Quick Response</h3>
+          <p class="text-orange-100">
+            I typically respond to messages within 24 hours. 
+            For urgent inquiries, feel free to call me directly!
+          </p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-slate-800 text-white text-center py-8 mt-16">
+    <p>&copy; 2024 Jay-Em Portfolio. All rights reserved.</p>
+  </footer>
+
+            <script>
+            (function() {
+              emailjs.init("LhGPjWcym5Zo0hK39"); // Your EmailJS public key
+            })();
+
+    function sendEmail(e) {
+      e.preventDefault();
+      
+      // Get form data
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const subject = document.getElementById('subject').value;
+      const message = document.getElementById('message').value;
+      
+      // Show loading state
+      const submitBtn = document.getElementById('submit-btn');
+      const btnText = document.getElementById('btn-text');
+      const btnLoading = document.getElementById('btn-loading');
+      
+      submitBtn.disabled = true;
+      btnText.classList.add('hidden');
+      btnLoading.classList.remove('hidden');
+      
+             // EmailJS template parameters
+       const templateParams = {
+         from_name: name,
+         from_email: email,
+         subject: subject,
+         message: message,
+         to_email: "jayemabundo098@gmail.com" // Your email address
+       };
+      
+                    // Send email using EmailJS
+              emailjs.send('service_leubreu', 'template_1vpt4cu', templateParams)
+        .then(function(response) {
+          // Success
+          alert('Message sent successfully! I\'ll get back to you soon.');
+          document.getElementById('contact-form').reset();
+          
+          // Reset button state
+          submitBtn.disabled = false;
+          btnText.classList.remove('hidden');
+          btnLoading.classList.add('hidden');
+        }, function(error) {
+          // Error
+          alert('Sorry, there was an error sending your message. Please try again or contact me directly.');
+          console.error('EmailJS Error:', error);
+          
+          // Reset button state
+          submitBtn.disabled = false;
+          btnText.classList.remove('hidden');
+          btnLoading.classList.add('hidden');
+        });
+    }
+  </script>
+</body>
+</html>

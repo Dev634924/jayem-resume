@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Portfolio</title>
+  <link rel="stylesheet" href="webpage.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+</head>
+<body>
+  <header class="flex items-center justify-between px-12 py-5">
+    <h1 class="logo">PORTFOLIO</h1>
+    <nav>
+      <ul class="flex gap-5 list-none">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About me</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects" target="_blank">Projects</a></li>
+        <li><a href="contactme.html">Contact me</a></li>
+      </ul>
+    </nav>
+  </header>
+
+   <video autoplay muted loop id="bg-video">
+    <source src="bg.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
+  <main id="home" class="hero max-w-[1100px] mx-auto px-6 pt-24 pb-12 min-h-screen flex flex-col md:flex-row items-start justify-between gap-8">
+    <div class="hero-text">
+      <h2><div class="container"><div class="text">Hi I'm Jay-Em!</div></div></h2>
+      <p>
+        a <span class="highlight">Web Developer</span> and aspiring 
+        Full-Stack Developer. I build modern, responsive, and scalable applications.
+      </p>
+      <div class="buttons">
+        <a href="#" class="btn primary vibrate-button">Hire me</a>
+        <a href="#" class="btn">Download CV</a>
+      </div>
+    </div>
+
+    <div class="hero-img">
+      <img src="Formal pic.jpg" alt="My Photo">
+    </div>
+  </main>
+
+  <div id="content" class="relative z-10">
+    <div class="bg-white text-slate-900 rounded-t-3xl shadow">
+      <div class="max-w-[1100px] mx-auto px-6">
+              <section id="about" class="section my-10 p-6">
+          <h2 class="mb-2">About Me</h2>
+          <p>Hello! I'm JM, a passionate web developer with a strong foundation in modern web technologies. I love creating beautiful, functional, and user-friendly websites that make a difference.</p>
+          <p>With experience in both frontend and backend development, I strive to build applications that not only look great but also provide excellent user experience and performance.</p>
+        </section>
+
+        <section id="skills" class="section my-10 p-6">
+          <h2 class="mb-2">Skills & Technologies</h2>
+          <div class="skills-grid">
+            <div class="skill-category">
+              <h3>Frontend Development</h3>
+              <ul>
+                <li>HTML5 & CSS3</li>
+                <li>JavaScript (ES6+)</li>
+                <li>React.js</li>
+                <li>Responsive Design</li>
+              </ul>
+            </div>
+            <div class="skill-category">
+              <h3>Backend Development</h3>
+              <ul>
+                <li>Node.js</li>
+                <li>Database Design</li>
+                <li>API Development</li>
+              </ul>
+            </div>
+            <div class="skill-category">
+              <h3>Tools & Others</h3>
+              <ul>
+                <li>Git & GitHub</li>
+                <li>VS Code</li>
+                <li>Figma</li>
+                <li>Agile Methodology</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section id="projects" class="section my-10 p-6">
+          <h2 class="mb-2">Projects & Experience</h2>
+          <p>I've worked on various projects that showcase my skills in web development. Here are some highlights of my work:</p>
+          <ul class="mt-2 list-disc pl-6">
+            <li>E-commerce website with payment integration</li>
+            <li>Portfolio websites for clients</li>
+            <li>Responsive web applications</li>
+            <li>Custom CMS development</li>
+            <li>Mobile-first design implementations</li>
+          </ul>
+        </section>
+
+
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+
